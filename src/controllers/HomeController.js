@@ -152,15 +152,15 @@ function callSendAPI(sender_psid, response) {
     }
   );
 }
-function setup_profile() {
+async function setup_profile() {
   //call profile facebook api
   let request_body = {
-    "get_started": "GET_STARTED",
-    "whitelisted_domains": "https://pickled-acidic-success.glitch.me",
+    get_started: { payload: "GET_STARTED" },
+    whitelisted_domains: ["https://pickled-acidic-success.glitch.me"],
   };
 
   // Send the HTTP request to the Messenger Platform
-  request(
+  await request(
     {
       uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
       qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -168,6 +168,7 @@ function setup_profile() {
       json: request_body,
     },
     (err, res, body) => {
+      console.log(body);
       if (!err) {
         console.log("Setup success");
       } else {
