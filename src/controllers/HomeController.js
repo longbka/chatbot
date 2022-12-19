@@ -120,9 +120,11 @@ function handlePostback(sender_psid, received_postback) {
     response = { text: "Thanks!" };
   } else if (payload === "no") {
     response = { text: "Oops, try sending another image." };
+  } else if (payload === "GET_STARTED"){
+    response = {text: "Xin chào mừng bạn đã đến với cửa hàng của chúng tôi"}
   }
-  // Send the message to acknowledge the postback
-  callSendAPI(sender_psid, response);
+    // Send the message to acknowledge the postback
+    callSendAPI(sender_psid, response);
 }
 
 // Sends response messages via the Send API
@@ -160,7 +162,7 @@ async function setup_profile() {
   };
 
   // Send the HTTP request to the Messenger Platform
-   request(
+  request(
     {
       uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
       qs: { access_token: PAGE_ACCESS_TOKEN },
