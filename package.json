@@ -1,5 +1,5 @@
 {
-  "name": "askit",
+  "name": "longbka",
   "version": "1.0.0",
   "description": "chatbot restaurant tieng viet",
   "main": "server.js",
@@ -19,6 +19,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "gh-pages": "^4.0.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
