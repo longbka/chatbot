@@ -160,7 +160,7 @@ async function setup_profile() {
   };
 
   // Send the HTTP request to the Messenger Platform
-  await request(
+   request(
     {
       uri: `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
       qs: { access_token: PAGE_ACCESS_TOKEN },
